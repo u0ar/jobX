@@ -1,0 +1,20 @@
+<h1> Add New Job </h1>
+<%= form_for @job do |f| %>
+
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+  
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "60x12" %>
+
+  <%= f.label :deadline %>
+  <%= select_date Date.today, prefix: :deadline %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.submit "Add Job" %>
+<% end %>
