@@ -1,3 +1,20 @@
-<h1> Add a new job </h1>
-<a href="#new-job">Add A New Job</a>
+<h1> JobX </h1>
+
 <%= link_to "Add Job", new_job_path %> 
+
+<% @jobs.each do |j| %>
+      <h2> <%= j.id %>. <%= link_to j.position, job_path(j) %></h2>
+      <%= j.company %>
+      <%= j.description %>
+      <%= j.deadline %>
+      
+      <small>
+      <%= link_to "Edit Job", edit_job_path(j.id) %>
+      <%= link_to "Delete", job_path(j.id), method: :delete, data: { confirm: "You sure?" } %>
+      <%= link_to "Add Note" %> 
+      <%= link_to "Add CV", new_job_cv_path(j) %>
+      </small>
+
+<% end %>
+
+

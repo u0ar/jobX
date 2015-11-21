@@ -1,5 +1,5 @@
-<h1> Add New Job </h1>
-<div class="pure-form pure-form-aligned">
+<h1> Edit Job </h1>
+<div class="pure-form pure-form-stacked">
 <%= form_for @job do |f|%>
   <%= f.label :company %>
   <%= f.text_field :company %>
@@ -16,6 +16,6 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
 
-  <%= f.submit "Add Job" %>
+  <%= f.submit "Edit Job" %>
 <% end %>
 </div>

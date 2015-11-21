@@ -1,0 +1,12 @@
+<h1> Add New CV </h1>
+<div class="pure-form pure-form-stacked">
+<%= form_for @job_cv do |f|%>
+  <%= f.label :cv_name %>
+  <%= f.text_field :cv_name %>
+  
+  <%= f.label :cv_text %>
+  <%= f.text_field :cv_text %>
+
+  <%= f.submit "Attach CV" %>
+<% end %>
+</div>

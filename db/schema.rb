@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119183544) do
+ActiveRecord::Schema.define(version: 20151121135746) do
+
+  create_table "cvs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "job_id"
+    t.string   "cv_name"
+    t.text     "cv_text"
+  end
+
+  add_index "cvs", ["job_id"], name: "index_cvs_on_job_id"
 
   create_table "jobs", force: :cascade do |t|
     t.string   "company"
@@ -21,6 +31,11 @@ ActiveRecord::Schema.define(version: 20151119183544) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
